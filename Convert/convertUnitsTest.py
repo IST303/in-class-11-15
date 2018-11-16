@@ -25,34 +25,6 @@ def test_miles_kilo():
     units = convert_units(2, "mile", "kilometer")
     assert round(units, 2) == 3.22
 
-KG_IN_1_POUND = 0.54
-KM_IN_1_MILE = 1.61
-LITER_IN_1_GALLON = 3.79
-
-CONVERSION_MAP = {('fahrenheit', 'celsius'): lambda f: 5 / 9 * (f - 32),
-                  ('celsius', 'fahrenheit'): lambda c: c * 9 / 5 + 32,
-                  ('pound', 'kilogram'): lambda p: p * KG_IN_1_POUND,
-                  ('kilogram', 'pound'): lambda k: k / KG_IN_1_POUND,
-                  ('mile', 'kilometer'): lambda k: k * KM_IN_1_MILE,
-                  ('kilometer', 'mile'): lambda m: m / KM_IN_1_MILE,
-                  ('gallon', 'liter'): lambda g: g * LITER_IN_1_GALLON,
-                  ('liter', 'gallon'): lambda l: l / LITER_IN_1_GALLON}
-
-
-def convert_units(amount, current_unit, converted_unit):
-    return CONVERSION_MAP.get((current_unit, converted_unit))(amount)
-
-
-
-pound = 'pound'
-kilogram = 'kilogram'
-mile = 'mile'
-kilometer = 'kilometer'
-fahrenheit = 'fahrenheit'
-celsius = 'celsius'
-gallon = 'gallon'
-liter = 'liter'
-
 test_case = {
 (1, pound, kilogram, 0.45),
 (1, mile, kilometer, 1.61),
