@@ -25,6 +25,15 @@ def test_miles_kilo():
     units = convert_units(2, "mile", "kilometer")
     assert round(units, 2) == 3.22
 
+pound = 'pound'
+kilogram = 'kilogram'
+mile = 'mile'
+kilometer = 'kilometer'
+fahrenheit = 'fahrenheit'
+celsius = 'celsius'
+gallon = 'gallon'
+liter = 'liter'
+    
 test_case = {
 (1, pound, kilogram, 0.45),
 (1, mile, kilometer, 1.61),
